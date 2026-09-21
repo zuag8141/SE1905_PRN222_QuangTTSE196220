@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using zSubscription.Repositories.QuangTT.DBContext;
 
 namespace zSubscription.Repositories.QuangTT
@@ -21,7 +21,7 @@ namespace zSubscription.Repositories.QuangTT
         {
             return _context.Set<T>().ToList();
         }
-        public async Task<List<T>> GetAllAsync()
+        public virtual async Task<List<T>> GetAllAsync()
         {
             return await _context.Set<T>().ToListAsync();
         }
@@ -66,32 +66,32 @@ namespace zSubscription.Repositories.QuangTT
             return true;
         }
 
-        public T GetById(int id)
+        public T? GetById(int id)
         {
             return _context.Set<T>().Find(id);
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T?> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public T GetById(string code)
+        public T? GetById(string code)
         {
             return _context.Set<T>().Find(code);
         }
 
-        public async Task<T> GetByIdAsync(string code)
+        public virtual async Task<T?> GetByIdAsync(string code)
         {
             return await _context.Set<T>().FindAsync(code);
         }
 
-        public T GetById(Guid code)
+        public T? GetById(Guid code)
         {
             return _context.Set<T>().Find(code);
         }
 
-        public async Task<T> GetByIdAsync(Guid code)
+        public virtual async Task<T?> GetByIdAsync(Guid code)
         {
             return await _context.Set<T>().FindAsync(code);
         }
