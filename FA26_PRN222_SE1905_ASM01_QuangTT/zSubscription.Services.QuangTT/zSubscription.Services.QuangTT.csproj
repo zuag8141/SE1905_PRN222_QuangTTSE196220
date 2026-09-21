@@ -10,4 +10,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\zSubscription.Repositories.QuangTT\zSubscription.Repositories.QuangTT.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.31" />
+	</ItemGroup>
 </Project>
