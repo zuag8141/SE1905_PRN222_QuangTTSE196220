@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +9,16 @@ using zSubscription.Repositories.QuangTT.DBContext;
 
 namespace zSubscription.Repositories.QuangTT
 {
-    class MembershipFeeQuangTtRepository : GenericRepository<MembershipFeeQuangTt>
+    public class MembershipFeeQuangTtRepository : GenericRepository<MembershipFeeQuangTt>
     {
-        public MembershipFeeQuangTtRepository() => _context ??= new PRN222Context();
-        public MembershipFeeQuangTtRepository(PRN222Context context) => _context = context;
+        public MembershipFeeQuangTtRepository() { }
+        public MembershipFeeQuangTtRepository(PRN222Context context) : base(context) { }
 
-        public async Task<List<MembershipFeeQuangTt>> GetAllAsync()
+        public override async Task<List<MembershipFeeQuangTt>> GetAllAsync()
         {
             return await _context.MembershipFeeQuangTts.Include(c => c.FeePackageQuangTt).ToListAsync();
         }
-        public async Task<MembershipFeeQuangTt> GetByIdAsync(int id)
+        public override async Task<MembershipFeeQuangTt?> GetByIdAsync(int id)
         {
             return await _context.MembershipFeeQuangTts.Include(c => c.FeePackageQuangTt).FirstOrDefaultAsync(c => c.MembershipFeeQuangTtid == id);
         }

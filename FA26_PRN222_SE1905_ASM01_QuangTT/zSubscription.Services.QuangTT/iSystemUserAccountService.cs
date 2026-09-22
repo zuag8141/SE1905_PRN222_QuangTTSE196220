@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,6 @@ namespace zSubscription.Services.QuangTT
 {
     public  interface ISystemUserAccountService
     {
-        Task<SystemUserAccount> GetUserAccount(string userName, string password);
+        Task<SystemUserAccount?> GetUserAccount(string userName, string password);
     }
 }

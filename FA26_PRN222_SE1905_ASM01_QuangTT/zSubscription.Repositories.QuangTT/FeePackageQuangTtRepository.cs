@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,9 @@ using zSubscription.Repositories.QuangTT.DBContext;
 
 namespace zSubscription.Repositories.QuangTT
 {
-    class FeePackageQuangTtRepository : GenericRepository<FeePackageQuangTt>
+    public class FeePackageQuangTtRepository : GenericRepository<FeePackageQuangTt>
     {
-        public FeePackageQuangTtRepository() => _context ??= new PRN222Context();
-        public FeePackageQuangTtRepository(PRN222Context context) => _context = context;
+        public FeePackageQuangTtRepository() { }
+        public FeePackageQuangTtRepository(PRN222Context context) : base(context) { }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +10,8 @@ namespace zSubscription.Services.QuangTT
     public interface IMembershipFeeQuangTtService
     {
         Task<List<MembershipFeeQuangTt>> GetAllAsync();
-        Task<MembershipFeeQuangTt> GetByIdAsync(int id);
-        Task<List<MembershipFeeQuangTt>> SearchAsync(string transCode, decimal amount, string payMethod);
+        Task<MembershipFeeQuangTt?> GetByIdAsync(int id);
+        Task<List<MembershipFeeQuangTt>> SearchAsync(string? transCode, decimal? amount, string? payMethod);
         Task<int> CreateAsync(MembershipFeeQuangTt membershipFee);
         Task<int> UpdateAsync(MembershipFeeQuangTt membershipFee);
         Task<bool> DeleteAsync(Guid id);
